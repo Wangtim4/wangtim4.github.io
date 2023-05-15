@@ -1,0 +1,23 @@
+//自訂的
+
+@import "./helpers/variableMy";
+@import "./helpers/base";
+
+@import './compentsScss/title';
+@import './compentsScss/news';
+@import './compentsScss/card';
+
+@import './layout/header';
+@import './layout/footer';
+
+// 官網的npm
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/mixins";
+
+@import "./helpers/variable";
+
+
+@import "~bootstrap/scss/bootstrap";
+
+// 
+

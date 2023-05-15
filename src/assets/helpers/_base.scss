@@ -1,0 +1,29 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    text-align: center;
+    li{
+        list-style: none;
+        a{
+            text-decoration: none;
+        }
+    }
+}
+
+.border-r-10 {
+    border-radius: 10px;
+ }
+
+.border-r-20 {
+    border-radius: 20px;
+ }
+
+ .bg-primary-light{
+    background-color: $color-bg;
+ }
