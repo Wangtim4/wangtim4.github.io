@@ -10,8 +10,8 @@
 
         <div class="row d-flex justify-content-between">
 
-            <div class="col-lg-5 col-md-12 p-0 my-3">
-                <table class="table shadow order-card">
+            <div class="col-lg-5 col-md-12 p-0 my-3 order-card">
+                <table class="table shadow ">
                     <thead class="bg-primary text-white   text-center ">
                         <tr>
                             <td colspan="4">
@@ -25,24 +25,51 @@
                             <th>品名</th>
                             <th>單價</th>
                             <th>數量</th>
-                            <th>小計</th>
+                            <th class="text-end">小計</th>
                         </tr>
                         <template v-if="cart.carts">
                             <tr v-for="item in cart.carts" :key="item.id">
-                                <td>{{ item.product.title }}</td>
+                                <td>{{ item.product.title }}
+                                    <div class="text-danger" v-if="item.coupon">
+                                        已套用優惠券
+                                    </div>
+                                </td>
                                 <td>{{ item.product.price }}</td>
                                 <td>{{ item.qty }} / {{ item.product.unit }}</td>
-                                <td>NT$ {{ item.product.price * item.qty }}</td>
+                                <td class="text-end">
+                                    <small v-if="cart.final_total !== cart.total" class="text-danger">折扣價：</small>
+                                    {{ $filters.currency(item.final_total) }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <div class="input-group mt-3 input-group-sm">
+                                        <input type="text" class="form-control" v-model="coupon_code"
+                                            placeholder="請輸入優惠碼" />
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary" type="button"
+                                                @click.prevent="addCouponCode">
+                                                套用優惠碼
+                                            </button>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
                         </template>
                     </tbody>
                     <tfoot class="bg-primary text-white  text-center ">
-                        <tr class="fs-4">
-                            <td colspan="4">總計 NT$ {{ cart.final_total }}</td>
+                        <tr>
+                            <td colspan="3" class="text-end">總計</td>
+                            <td class="text-end">{{ $filters.currency(cart.total) }}</td>
+                        </tr>
+                        <tr v-if="cart.final_total !== cart.total">
+                            <td colspan="3" class="text-end text-danger">折扣價</td>
+                            <td class="text-end text-danger">
+                                {{ $filters.currency(cart.final_total) }}
+                            </td>
                         </tr>
                     </tfoot>
                 </table>
-
             </div>
 
             <div class="col-lg-6 col-md-12 border p-3 my-3 bg-primary text-white fs-5 shadow">
@@ -146,6 +173,17 @@ export default {
                     this.$router.push(`./checkout/${orderId}`);
                 });
         },
+        addCouponCode() {
+            const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/coupon`;
+            const coupon = {
+                code: this.coupon_code,
+            }
+            this.$http.post(url, { data: coupon })
+                .then((res) => {
+                    console.log(res);
+                    this.getCart();
+                })
+        }
     },
     created() {
         this.getCart()

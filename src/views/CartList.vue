@@ -13,7 +13,7 @@
                         <thead class="bg-primary text-white  ">
                             <!-- <th colspan="6"><h3>購物清單</h3></th> -->
                             <tr>
-                                <th>圖片</th>
+                                <th>商品圖 </th>
                                 <th>品名</th>
                                 <th style="width: 200px;">數量</th>
                                 <th>單價</th>
@@ -45,7 +45,7 @@
                         </tbody>
                         <tfoot class="fs-2">
                             <tr>
-                                <td colspan="5" class="text-end">總計 共 NT$ {{ cart.final_total }}</td>
+                                <td colspan="5" class="text-end">總計 共 NT$ {{ cart.total }}</td>
                             </tr>
                         </tfoot>
                     </table>
@@ -66,7 +66,6 @@
                         <button class="btn btn-lg btn-secondary"><i class="bi bi-caret-left-fill"></i>繼續購物</button>
                     </router-link>
                 </div>
-                
             </div>
         </div>
 </template>

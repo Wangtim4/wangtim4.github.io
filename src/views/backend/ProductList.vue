@@ -27,10 +27,10 @@
         <td>{{ item.title }}</td>
         <!-- 14.3套用全域的千分號方法 -->
         <td class="text-right">
-          {{ $filter.currency(item.price) }}
+          {{ $filters.currency(item.price) }}
         </td>
         <td class="text-right">
-          {{ $filter.currency(item.origin_price) }}
+          {{ $filters.currency(item.origin_price) }}
         </td>
         <td>
           <span class="text-success" v-if="item.is_enabled">啟用</span>
