@@ -2,7 +2,7 @@
     <div class="container-fluid my-5">
         <div class="title">商品介紹</div>
         <div class="row d-flex justify-content-center">
-            <div class="col-lg-4 col-md-10 col-sm-12 mb-4">
+            <div class="col-lg-4 col-md-10 col-sm-10  mb-4">
                 <div class="card text-center border shadow card-translateY">
                     <img src="https://images.pexels.com/photos/2478347/pexels-photo-2478347.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                         class="card-img-top" alt="">
@@ -12,7 +12,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-10 mb-4">
+            <div class="col-lg-4 col-md-10 col-sm-10 mb-4">
                 <div class="card text-center shadow card-translateY">
                     <img src="https://images.pexels.com/photos/942768/pexels-photo-942768.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                         class="card-img-top" alt="">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-10 mb-4">
+            <div class="col-lg-4  col-md-10 col-sm-10 mb-4">
                 <div class="card text-center shadow card-translateY">
                     <img src="@/assets/images/coffee3.jpg"
                         class="card-img-top" alt="">

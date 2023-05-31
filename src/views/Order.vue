@@ -10,9 +10,9 @@
 
         <div class="row d-flex justify-content-between">
 
-            <div class="col-lg-5 col-md-12 p-0 my-3 order-card">
+            <div class="col-lg-5 col-md-12 p-0 my-3 ">
                 <table class="table shadow ">
-                    <thead class="bg-primary text-white   text-center ">
+                    <thead class="bg-primary text-white text-center ">
                         <tr>
                             <td colspan="4">
                                 <h3>訂單資訊</h3>

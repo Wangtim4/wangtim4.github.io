@@ -18,7 +18,7 @@ export default {
     subscription() {
         Swal.fire({
           icon: 'success',
-          title: '優惠碼: follow08',
+          title: '優惠碼: coupons80',
         });
     },
   },
@@ -26,7 +26,7 @@ export default {
 </script>
 <style lang="scss" scoped>
   .banner{
-    height: 40vh;
+    min-height: 200px;
     background-image: url('@/assets/images/coffee_banner.jpg');
     background-position: center;
     background-size: cover;
@@ -40,9 +40,14 @@ export default {
       border-radius: 16px;
       
       position: absolute;
-      top: 50%;
+      top: 60%;
       left: 10%;
       transform: translateY(-50%);
+    }
+    @media (max-width: 760px) {
+      .text-box{
+        width: 60%;
+      }
     }
   }
 </style>

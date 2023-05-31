@@ -3,7 +3,7 @@ import { createApp } from 'vue'
 // npm VueAxios
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-
+import 'bootstrap';
 
 // 11 vue3-loading-overlay
 // Import component引入路經須改為vue3和overlay
@@ -36,6 +36,7 @@ import { currency, date } from './methods/filter';
 // 15.Toast訊息改為全域使用
 import $httpMessageState from './methods/pushMessageState';
 
+
 // 定義驗證規則
 Object.keys(AllRules).forEach((rule) => {
     defineRule(rule, AllRules[rule]);
@@ -66,6 +67,7 @@ app.use(router)
 // #11-2 多處用到，全域註冊
 
 app.use(VueSweetalert2)
+
 
 // 3.註冊 vee-validate 三個全域元件
 app.component('Form', Form);

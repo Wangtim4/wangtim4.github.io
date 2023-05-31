@@ -22,8 +22,8 @@
           </ul>
         </div>
         <div class="col-lg-10 col-md-9">
-          <div class="row d-flex justify-content-between">
-            <template v-for="item in products" :key="item.id">
+          <div class="row d-flex">
+            <template v-for="item in filterCategories" :key="item.id">
               <div class="col-lg-4 col-sm-6 mb-4">
                 <div class="card h-100 ">
                   <router-link :to="`/product/${item.id}`">
@@ -32,11 +32,11 @@
                       <img :src="item.imageUrl" alt="" class="img-fluid mb-3 " style="height: 200px; width: 400px; object-fit: cover;">                    
                   </router-link>
                   <div class="card-body">
-                    <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-between ">
+                      
                       <a href="#" class="fs-4 fw-bold" @click.prevent="getProduct(item.id)"> {{ item.title }}
                       </a>
-
-                      <p class="badge bg-secondary fs-6 ">{{ item.category }}
+                      <p class="badge bg-secondary fs-6 align-middle">{{ item.category }}
                       </p>
                     </div>
                     <p class="card-text">{{ item.content }}</p>
@@ -112,8 +112,7 @@ export default {
         const { categoryName } = this.$route.params;
         if (categoryName) {
             this.filterCategory = categoryName;
-          }
-        // console.log('products:', products);       
+          }     
       });
     },
     getProduct(id) {
